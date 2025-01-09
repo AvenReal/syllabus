@@ -1,0 +1,416 @@
+{
+  "UEs": [
+    {
+      "Nom": "Agir",
+      "ECUEs": [
+        {
+          "Nom": "Anglais Formel à l'Écrit",
+          "Coef": 3,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCM",
+              "Coef": 3,
+              "TempNote": 12.5
+            },
+            {
+              "Nom": "EVAL-B1",
+              "Coef": 7,
+              "TempNote": 16
+            }
+          ]
+        },
+        {
+          "Nom": "Stratégie de Lecture",
+          "Coef": 3,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCM",
+              "Coef": 3,
+              "TempNote": 14.5
+            },
+            {
+              "Nom": "EVAL-B2",
+              "Coef": 3,
+              "TempNote": 9
+            },
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 4,
+              "TempNote": null
+            }
+          ]
+        },
+        {
+          "Nom": "Cybersécurité",
+          "Coef": 1,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "TP",
+              "Coef": 6,
+              "TempNote": null
+            },
+            {
+              "Nom": "QCM1",
+              "Coef": 2,
+              "TempNote": 11
+            },
+            {
+              "Nom": "QCM2",
+              "Coef": 2,
+              "TempNote": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Nom": "Concevoir",
+      "ECUEs": [
+        {
+          "Nom": "Types Algébriques Abstraits",
+          "Coef": 3,
+          "Seuil": 6,
+          "Notes": [
+            {
+              "Nom": "QCMs",
+              "Coef": 2,
+              "TempNote": 10.88
+            },
+            {
+              "Nom": "EXAM-B1",
+              "Coef": 4,
+              "TempNote": 12
+            },
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 4,
+              "TempNote": null
+            }
+          ]
+        },
+        {
+          "Nom": "Outils de base mathématiques",
+          "Coef": 3,
+          "Seuil": 6,
+          "Notes": [
+            {
+              "Nom": "QCMs-OBM",
+              "Coef": 2,
+              "TempNote": 12.33
+            },
+            {
+              "Nom": "CC-OBM",
+              "Coef": 2,
+              "TempNote": 17
+            },
+            {
+              "Nom": "EXAM-B1-OBM",
+              "Coef": 6,
+              "TempNote": 17
+            }
+          ]
+        },
+        {
+          "Nom": "Dénombrement et probabilités",
+          "Coef": 3,
+          "Seuil": 7,
+          "Notes": [
+            {
+              "Nom": "QCMs-DP",
+              "Coef": 2,
+              "TempNote": 17
+            },
+            {
+              "Nom": "CC-DP",
+              "Coef": 2,
+              "TempNote": 19
+            },
+            {
+              "Nom": "EXAM-B1-DP",
+              "Coef": 6,
+              "TempNote": 14
+            }
+          ]
+        },
+        {
+          "Nom": "Arithmétique des nombres entiers",
+          "Coef": 2,
+          "Seuil": 6,
+          "Notes": [
+            {
+              "Nom": "QCMs-ARITH",
+              "Coef": 2,
+              "TempNote": 14
+            },
+            {
+              "Nom": "CC-ARITH",
+              "Coef": 2,
+              "TempNote": 16.5
+            },
+            {
+              "Nom": "EXAM-B2-ARITH",
+              "Coef": 6,
+              "TempNote": null
+            }
+          ]
+        },
+        {
+          "Nom": "Suites réelles",
+          "Coef": 3,
+          "Seuil": 7,
+          "Notes": [
+            {
+              "Nom": "QCMs-SR",
+              "Coef": 3,
+              "TempNote": 11
+            },
+            {
+              "Nom": "EXAM-B2-SR",
+              "Coef": 7,
+              "TempNote": null
+            }
+          ]
+        },
+        {
+          "Nom": "Outils d'analyse de circuits",
+          "Coef": 1,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCMs",
+              "Coef": 2,
+              "TempNote": 12
+            },
+            {
+              "Nom": "EXAM-B1",
+              "Coef": 8,
+              "TempNote": 18
+            }
+          ]
+        },
+        {
+          "Nom": "Études des régimes sinusoïdaux",
+          "Coef": 1,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCMs",
+              "Coef": 2,
+              "TempNote": 8.33
+            },
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 8,
+              "TempNote": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Nom": "Piloter",
+      "ECUEs": [
+        {
+          "Nom": "Étude de la grammaire, temps présent et écriture spontanée",
+          "Coef": 3,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCM",
+              "Coef": 1,
+              "TempNote": 14
+            },
+            {
+              "Nom": "TOEIC",
+              "Coef": 1,
+              "TempNote": 14.9
+            },
+            {
+              "Nom": "DST B1",
+              "Coef": 5,
+              "TempNote": 13
+            },
+            {
+              "Nom": "Oral B1",
+              "Coef": 3,
+              "TempNote": 12
+            }
+          ]
+        },
+        {
+          "Nom": "Pratique du temps passé",
+          "Coef": 3,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCM",
+              "Coef": 1,
+              "TempNote": 15
+            },
+            {
+              "Nom": "EXPOSÉ",
+              "Coef": 3,
+              "TempNote": 12
+            },
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 3,
+              "TempNote": null
+            },
+            {
+              "Nom": "Written work",
+              "Coef": 3,
+              "TempNote": 13
+            }
+          ]
+        },
+        {
+          "Nom": "Méthodologie de Travail",
+          "Coef": 4,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "RAPPORT",
+              "Coef": 10,
+              "TempNote": 16.5
+            }
+          ]
+        },
+        {
+          "Nom": "Méthodologie de la Communication Orale",
+          "Coef": 4,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "SOUTENANCE",
+              "Coef": 10,
+              "TempNote": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Nom": "Produire",
+      "ECUEs": [
+        {
+          "Nom": "Caml",
+          "Coef": 3,
+          "Seuil": 7,
+          "Notes": [
+            {
+              "Nom": "SEMINAIRE",
+              "Coef": 3,
+              "TempNote": 15
+            },
+            {
+              "Nom": "EXAM-B1",
+              "Coef": 7,
+              "TempNote": 16
+            }
+          ]
+        },
+        {
+          "Nom": "Python",
+          "Coef": 3,
+          "Seuil": 8,
+          "Notes": [
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 1,
+              "TempNote": null
+            }
+          ]
+        },
+        {
+          "Nom": "Environnement de travail EPITA",
+          "Coef": 1,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "EXAM-B1",
+              "Coef": 8,
+              "TempNote": 17.34
+            },
+            {
+              "Nom": "TPs",
+              "Coef": 2,
+              "TempNote": 18.08
+            }
+          ]
+        },
+        {
+          "Nom": "Structures de données",
+          "Coef": 2,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 8,
+              "TempNote": null
+            },
+            {
+              "Nom": "TPs",
+              "Coef": 2,
+              "TempNote": 16.22
+            }
+          ]
+        },
+        {
+          "Nom": "Numération",
+          "Coef": 1,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCMs",
+              "Coef": 2,
+              "TempNote": 14
+            },
+            {
+              "Nom": "EXAM-B1",
+              "Coef": 8,
+              "TempNote": 15.5
+            }
+          ]
+        },
+        {
+          "Nom": "Algèbre de Boole",
+          "Coef": 2,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "QCMs",
+              "Coef": 2,
+              "TempNote": 12.5
+            },
+            {
+              "Nom": "EXAM-B2",
+              "Coef": 8,
+              "TempNote": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Nom": "Cahier des charges",
+      "ECUEs": [
+        {
+          "Nom": "Méthodologie de Travail",
+          "Coef": 4,
+          "Seuil": 5,
+          "Notes": [
+            {
+              "Nom": "RAPPORT",
+              "Coef": 1,
+              "TempNote": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
