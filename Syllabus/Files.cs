@@ -71,7 +71,6 @@ public class Files
                         ue.AddECUE(ecue);
                         foreach (var notes in notesString.Split('+'))
                         {
-                            Console.WriteLine(notes);
                             if (notes != "")
                             {
                                 string[] noteArray = notes.Split('*');

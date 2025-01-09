@@ -1,11 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+
 using Syllabus;
 using Syllabus.syllabus;
 using Syllabus.files;
+using Avalonia;
 
 
+
+
+while (true)
+{
+    Commands.GetCommand(Console.ReadLine());
+    Console.Clear();
+}
 
 Total total = Syllabus.files.Files.ImportSyllabus("S1-moi.syllabus");
 
