@@ -23,24 +23,24 @@ public class Commands
             help = true;
         }
         
-        
-        
         Console.Clear();
         switch (command)
         {
-            
-            
             case "import":
                 result = CommandImport(arguments, help);
                 break;
             case "export":
                 result = CommandExport(arguments, help);
                 break;
-            
-            default:
-                Console.WriteLine($"Command {input} not Found");
+            case "home":
+                result = Total.ToString();
                 break;
-            
+            case "minnotes":
+                result = Total.GetAllMinToValidate();
+                break;
+            default:
+                result = $"Command {input} not Found";
+                break;
         }
 
         Console.WriteLine(result);

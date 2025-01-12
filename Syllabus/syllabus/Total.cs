@@ -197,14 +197,6 @@ public class Total
         List<List<string>> result = new List<List<string>>();
         foreach (var ue in UEs)
         {
-            if (ue.Nom == "Agir")
-            {
-                foreach (var ecue in ue.GetECUEs())
-                {
-                    Console.WriteLine(ecue.ToString());
-                }
-            }
-    
             foreach (var ecue in ue.GetECUEs())
             {
                 foreach (var note in ecue.GetNotes())
