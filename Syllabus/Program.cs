@@ -6,8 +6,13 @@ using Syllabus;
 using Syllabus.syllabus;
 using Syllabus.files;
 using Avalonia;
+using Spectre.Console;
 
 
+//AnsiConsole.Markup("[underline red]hello[/] world");
+
+Total tt = Files.ImportSyllabus("files/S1-moi.syllabus");
+tt.Print();
 
 
 while (true)

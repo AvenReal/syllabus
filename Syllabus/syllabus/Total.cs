@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Newtonsoft.Json.Linq;
+using Spectre.Console;
 
 namespace Syllabus.syllabus;
 
@@ -178,6 +179,24 @@ public class Total
         return jObject;
     }
 
+    public void Print()
+    {
+        var table = new Table();
+        table.AddColumn(new TableColumn("").Centered().Width(null));
+        table.AddColumn(new TableColumn("").Width(0));
+        table.AddColumn(new TableColumn("Minimum").Centered().Width(null));
+        table.AddColumn(new TableColumn("Minimum Validate").Centered());
+        table.AddColumn(new TableColumn("").Width(0));
+        table.AddColumn(new TableColumn("Temporaire").Centered().Width(null));
+        table.AddColumn(new TableColumn("Temporaire Validate").Centered().Width(null));
+        table.AddColumn(new TableColumn("").Width(0));
+        table.AddColumn(new TableColumn("Maximum").Centered().Width(null));
+        table.AddColumn(new TableColumn("Maximum Validate").Centered().Width(null));
+
+        table.Expand = true;
+        table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", $"[bold]{MinValide}[/]", "", $"[bold]{TempMoyenne}[/]");
+        AnsiConsole.Write(table);
+    }
 
     public UE GetUE(string nom)
     {
