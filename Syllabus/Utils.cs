@@ -1,8 +1,35 @@
-using System.IO;
+using Spectre.Console;
+
 namespace Syllabus;
 
 public class Utils
 {
+    public static string FormatBoolean(bool? b, string param = "")
+    {
+        return $"[{param + (param != "" ? " " : "")}{(b == true ? "green" : "red")}]{b}[/]";
+    }
+    public static void PrintList(List<(string param, List<string> sublist)> list)
+    {
+        var header = list[0];
+        bool headerhasparam = header.param != "";
+        
+        Table table = new Table();
+        foreach (var elem in header.sublist)
+        {
+            table.AddColumn(new TableColumn($"{(headerhasparam ? $"[{header.param}]" : "")}{elem}{(headerhasparam ? "[/]" : "")}").Centered());
+        }
+        
+        foreach (var (param, sublist) in list.GetRange(1, list.Count-1))
+        {
+            foreach (var elem in sublist)
+            {
+                bool hasparam = header.param != "";
+                table.AddRow($"{(hasparam ? $"[{header.param}]" : "")}{elem}{(hasparam ? "[/]" : "")}");
+            }
+        }
+        
+        AnsiConsole.Write(table);
+    }
     public static void SortListOfTuple(List<(int n, string)> l)
     {
         static bool IsSorted(List<(int n, string)> l)

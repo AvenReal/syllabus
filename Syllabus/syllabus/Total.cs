@@ -1,4 +1,4 @@
-using System.Text.Json;
+ using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using Spectre.Console;
 
@@ -181,21 +181,18 @@ public class Total
 
     public void Print()
     {
-        var table = new Table();
-        table.AddColumn(new TableColumn("").Centered().Width(null));
-        table.AddColumn(new TableColumn("").Width(0));
-        table.AddColumn(new TableColumn("Minimum").Centered().Width(null));
-        table.AddColumn(new TableColumn("Minimum Validate").Centered());
-        table.AddColumn(new TableColumn("").Width(0));
-        table.AddColumn(new TableColumn("Temporaire").Centered().Width(null));
-        table.AddColumn(new TableColumn("Temporaire Validate").Centered().Width(null));
-        table.AddColumn(new TableColumn("").Width(0));
-        table.AddColumn(new TableColumn("Maximum").Centered().Width(null));
-        table.AddColumn(new TableColumn("Maximum Validate").Centered().Width(null));
+        Table table = new Table();
+       table.AddColumns(new string[] { "", "", "Minimum", "Minimum Valide", "", "Temporaire", "Temporaire Valide", "", "Maximum", "Maximum Valide" });
+       table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", Utils.FormatBoolean(MinValide, "bold"), "", $"[bold]{TempMoyenne}[/]", Utils.FormatBoolean(TempValide, "bold"), "", $"[bold]{MaxMoyenne}[/]", Utils.FormatBoolean(MaxValide, "bold"));
+       
+       foreach (var ue in UEs)
+       {
+           table.AddRow(ue.Nom, "", ue.MinMoyenne.ToString()!, Utils.FormatBoolean(ue.MinValide), "", ue.TempMoyenne.ToString()!,
+               Utils.FormatBoolean(ue.TempValide), "", ue.MaxMoyenne.ToString()!, Utils.FormatBoolean(ue.MaxValide));
+       }
 
-        table.Expand = true;
-        table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", $"[bold]{MinValide}[/]", "", $"[bold]{TempMoyenne}[/]");
-        AnsiConsole.Write(table);
+       table.Width(null).Centered();
+       AnsiConsole.Write(table);
     }
 
     public UE GetUE(string nom)

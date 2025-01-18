@@ -1,4 +1,5 @@
 using Newtonsoft.Json.Linq;
+using Spectre.Console;
 
 namespace Syllabus.syllabus;
 using Syllabus;
@@ -239,7 +240,25 @@ public class ECUE
 
         return Utils.FormatTable(result);
     }
+    
+    public void Print()
+    {
+        Table table = new Table();
+        table.AddColumns(new string[] { Nom, "", "Minimum", "Minimum Valide", "", "Temporaire", "Temporaire Valide", "", "Maximum", "Maximum Valide" });
+        table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", Utils.FormatBoolean(MinValide, "bold"), "", $"[bold]{TempMoyenne}[/]", Utils.FormatBoolean(TempValide, "bold"), "", $"[bold]{MaxMoyenne}[/]", Utils.FormatBoolean(MaxValide, "bold"));
+        
 
+        foreach (var Note in Notes)
+        {
+            table.AddRow(Note.Nom, "", "", "", "",
+                Note.TempNote.ToString(), "", "", "",
+                "");
+        }
+        
+        table.Width(null).Centered();
+        AnsiConsole.Write(table);
+    }
+    
     public JObject ToJson()
     {
         JObject jObject = new JObject();
