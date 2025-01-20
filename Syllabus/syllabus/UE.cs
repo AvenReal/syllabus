@@ -249,7 +249,7 @@ public class UE
         Table table = new Table();
         table.AddColumns(new string[] { Nom, "", "Minimum", "Minimum Valide", "", "Temporaire", "Temporaire Valide", "", "Maximum", "Maximum Valide" });
         table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", Utils.FormatBoolean(MinValide, "bold"), "", $"[bold]{TempMoyenne}[/]", Utils.FormatBoolean(TempValide, "bold"), "", $"[bold]{MaxMoyenne}[/]", Utils.FormatBoolean(MaxValide, "bold"));
-        
+        table.AddEmptyRow();
 
         foreach (var ecue in ECUEs)
         {

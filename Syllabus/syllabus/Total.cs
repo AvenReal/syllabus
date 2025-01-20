@@ -181,18 +181,20 @@ public class Total
 
     public void Print()
     {
-        Table table = new Table();
-       table.AddColumns(new string[] { "", "", "Minimum", "Minimum Valide", "", "Temporaire", "Temporaire Valide", "", "Maximum", "Maximum Valide" });
-       table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", Utils.FormatBoolean(MinValide, "bold"), "", $"[bold]{TempMoyenne}[/]", Utils.FormatBoolean(TempValide, "bold"), "", $"[bold]{MaxMoyenne}[/]", Utils.FormatBoolean(MaxValide, "bold"));
-       
-       foreach (var ue in UEs)
-       {
-           table.AddRow(ue.Nom, "", ue.MinMoyenne.ToString()!, Utils.FormatBoolean(ue.MinValide), "", ue.TempMoyenne.ToString()!,
-               Utils.FormatBoolean(ue.TempValide), "", ue.MaxMoyenne.ToString()!, Utils.FormatBoolean(ue.MaxValide));
-       }
-
-       table.Width(null).Centered();
-       AnsiConsole.Write(table);
+        Table table = new Table(); 
+        table.AddColumns(new string[] { "", "", "Minimum", "Minimum Valide", "", "Temporaire", "Temporaire Valide", "", "Maximum", "Maximum Valide" });
+        table.AddRow("[bold]Total[/]", "", $"[bold]{MinMoyenne}[/]", Utils.FormatBoolean(MinValide, "bold"), "", $"[bold]{TempMoyenne}[/]", Utils.FormatBoolean(TempValide, "bold"), "", $"[bold]{MaxMoyenne}[/]", Utils.FormatBoolean(MaxValide, "bold"));
+        table.AddEmptyRow();
+        
+        
+        foreach (var ue in UEs)
+        {
+            table.AddRow(ue.Nom, "", ue.MinMoyenne.ToString()!, Utils.FormatBoolean(ue.MinValide), "", ue.TempMoyenne.ToString()!,
+                Utils.FormatBoolean(ue.TempValide), "", ue.MaxMoyenne.ToString()!, Utils.FormatBoolean(ue.MaxValide));
+        }
+        
+        table.Width(null).Centered();
+        AnsiConsole.Write(table);
     }
 
     public UE GetUE(string nom)
