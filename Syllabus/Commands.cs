@@ -38,6 +38,12 @@ public class Commands
             case "minnotes":
                 result = Total.GetAllMinToValidate();
                 break;
+            case "set":
+                Total[arguments[0]][arguments[1]][arguments[2]].TempNote = double.Parse( arguments[3]);
+                    double.Parse(arguments[3]);
+                Console.WriteLine($"{arguments[0]} -> {arguments[1]} -> {arguments[2]} has been set to {arguments[3]}");
+                Total.Print();
+                break;
             default:
                 result = $"Command {input} not Found";
                 break;
@@ -99,33 +105,5 @@ public class Commands
             return "No file to export";
         }
     }
-    public static string GetClosestString(string input, List<string> l)
-    {
-        List<(int dist, string word)> dict = new List<(int dist, string word)>();
-        foreach (var word in l)
-        {
-            int dist = Utils.GetStringDistances(input, word);
-            if (dist == 0)
-            {
-                return word;
-            }
-            else
-            {
-                dict.Add((dist, word));
-            }
-        }
-        
-        Utils.SortListOfTuple(dict);
-        while (true)
-        {
-            foreach (var (_, word) in dict)
-            {
-                Console.Write($"You wrote {input} did\n you mean {word}? [y/n]:");
-                if (Console.ReadLine() == "y")
-                {
-                    return word;
-                }
-            }
-        }
-    }
+    
 }

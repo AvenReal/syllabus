@@ -18,7 +18,7 @@ public class Files
     public static void ExportSyllabus(Total total, string path)
     {
         StreamWriter file = new StreamWriter(path + ".syllabus");
-        foreach (var ue in total.UEs)
+        foreach (var ue in total.GetUEs())
         {
             file.WriteLine(ue.ToSyllabus());
         }
@@ -56,7 +56,7 @@ public class Files
 
 
                 UE ue = new UE(nomUe);
-                result.UEs.Add(ue);
+                result.Add(ue);
                 foreach (var ecues in ecuesString.Split(';'))
                 {
                     if (ecues != "")

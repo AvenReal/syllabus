@@ -6,7 +6,7 @@ namespace Syllabus.syllabus;
 
 public class Total
 {
-    public List<UE> UEs;
+    private List<UE> UEs;
 
     public float? MaxMoyenne
     {
@@ -140,6 +140,11 @@ public class Total
     }
 
 
+    public List<UE> GetUEs()
+    {
+        return UEs;
+    }
+
     public override string ToString()
     {
         List<List<string>> result = new List<List<string>>
@@ -197,6 +202,22 @@ public class Total
         AnsiConsole.Write(table);
     }
 
+    public UE this[string key]
+    {
+        get
+        {
+            List<string> uesNames = new List<string>();
+            foreach (var ue in UEs)
+            {
+                uesNames.Add(ue.Nom);
+            }
+
+            return GetUE(Utils.GetClosestString(key, uesNames));
+        }
+    }
+    
+    
+
     public UE GetUE(string nom)
     {
         foreach (var ue in UEs)
@@ -208,6 +229,11 @@ public class Total
         }
 
         throw new ArgumentException();
+    }
+
+    public void Add(UE ue)
+    {
+        UEs.Add(ue);
     }
 
     public string GetAllMinToValidate()

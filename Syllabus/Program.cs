@@ -8,22 +8,50 @@ using Syllabus.files;
 using Spectre.Console;
 
 
-//AnsiConsole.Markup("[underline red]hello[/] world");
+Total tt = Files.ImportSyllabus("files/S2-moi.syllabus");
 
-Total tt = Files.ImportSyllabus("files/S1-moi.syllabus");
-//tt.GetUE("Agir").GetECUE("Cybersécurité").GetNote("TP").TempNote = 20;
-//tt.GetUE("Concevoir").GetECUE("Suites réelles").GetNote("EXAM-B2-SR").TempNote = 13;
+Commands.Total = tt;
 tt.Print();
-Console.WriteLine(tt.GetAllMinToValidate());
-foreach (var ue in tt.UEs)
-{
-    ue.Print();
-    foreach (var ecue in ue.GetECUEs())
+var a = new List<(string, List<(string, List<(string, string)> )> )>{
+    ("Agir", new List<(string, List<(string, string)>)>
     {
-        ecue.Print();
+        ( "Comprehention" , new List<(string, string)>
+        {
+            ("Eval-B3", "16,5"), 
+            ("Exam-B3", "17,2")
+        }),
+        ( "Expression" , new List<(string, string)>
+        {
+            ("Projet-B4", "16,5")
+        }),
+        ( "Synthese" , new List<(string, string)>
+        {
+            ("QCM", "10,5"),
+            ("EXPOSE", "13"),
+            ("TOEIC", "14,65"),
+            ("written", "14"),
+        }),
+        ( "AR / VR" , new List<(string, string)>
+        {
+            ("PROJET", "20"),
+            ("QCM1", "20"),
+        }),
+    })
+};
+
+foreach (var (ue, ecues) in a)
+{
+    foreach (var (ecue, notes) in ecues)
+    {
+        foreach (var (note, number) in notes)
+        {
+            Commands.GetCommand($"set {ue} {ecue} {note} {number}");
+        }
     }
 }
 
+
+Console.WriteLine(tt.GetAllMinToValidate());
 while (true)
 {
     Commands.GetCommand(Console.ReadLine());
@@ -35,6 +63,6 @@ Total total = Syllabus.files.Files.ImportSyllabus("S1-moi.syllabus");
 Console.WriteLine(total.ToString());
 
 
-Console.WriteLine(Commands.GetClosestString(Console.ReadLine(), total.GetUENoms() ));
+Console.WriteLine(Utils.GetClosestString(Console.ReadLine(), total.GetUENoms() ));
 
 

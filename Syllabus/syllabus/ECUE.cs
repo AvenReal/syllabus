@@ -191,6 +191,22 @@ public class ECUE
 
         return false;
     }
+    
+    public Note this[string key]
+    {
+        get
+        {
+            List<string> NotesNames = new List<string>();
+            foreach (var note in Notes)
+            {
+                NotesNames.Add(note.Nom);
+            }
+
+            return GetNote(Utils.GetClosestString(key, NotesNames));
+        }
+    }
+    
+    
     public Note GetNote(string NameOfNote)
     {
         foreach (var note in Notes)

@@ -185,6 +185,23 @@ public class UE
 
         return false;
     }
+    
+    public ECUE this[string key]
+    {
+        get
+        {
+            List<string> ecuesNames = new List<string>();
+            foreach (var ecue in ECUEs)
+            {
+                ecuesNames.Add(ecue.Nom);
+            }
+
+            return GetECUE(Utils.GetClosestString(key, ecuesNames));
+        }
+    }
+    
+    
+    
     public ECUE GetECUE(string NameOfECUE)
     {
         foreach (var ecue in ECUEs)
